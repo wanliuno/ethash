@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/ethereum/ethash.svg?branch=master)](https://travis-ci.org/ethereum/ethash)
+[![Build Status](https://travis-ci.org/wanliuno/ethash.svg?branch=master)](https://travis-ci.org/wanliuno/ethash)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/debris/ethash?branch=master&svg=true)](https://ci.appveyor.com/project/debris/ethash-nr37r/branch/master)
 
 # Ethash
 
 For details on this project, please see the Ethereum wiki:
-https://github.com/ethereum/wiki/wiki/Ethash
+https://github.com/wanliuno/wiki/wiki/Ethash
 
 ### Coding Style for C++ code:
 
-Follow the same exact style as in [cpp-ethereum](https://github.com/ethereum/cpp-ethereum/blob/develop/CodingStandards.txt)
+Follow the same exact style as in [cpp-wanliuno](https://github.com/wanliuno/cpp-wanliuno/blob/develop/CodingStandards.txt)
 
 ### Coding Style for C code:
 

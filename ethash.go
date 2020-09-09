@@ -1,20 +1,20 @@
-// Copyright 2015 The go-ethereum Authors
+// Copyright 2015 The go-wanliuno Authors
 // Copyright 2015 Lefteris Karapetsas <lefteris@refu.co>
 // Copyright 2015 Matthew Wampler-Doty <matthew.wampler.doty@gmail.com>
-// This file is part of the go-ethereum library.
+// This file is part of the go-wanliuno library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-wanliuno library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-wanliuno library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-wanliuno library. If not, see <http://www.gnu.org/licenses/>.
 
 package ethash
 
@@ -40,9 +40,9 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/wanliuno/go-wanliuno/common"
+	"github.com/wanliuno/go-wanliuno/crypto"
+	"github.com/wanliuno/go-wanliuno/log"
 )
 
 var (
@@ -367,7 +367,7 @@ func (pow *Full) Search(block Block, stop <-chan struct{}, index int) (nonce uin
 			ret := C.ethash_full_compute(dag.ptr, hash, C.uint64_t(nonce))
 			result := h256ToHash(ret.result).Big()
 
-			// TODO: disagrees with the spec https://github.com/ethereum/wiki/wiki/Ethash#mining
+			// TODO: disagrees with the spec https://github.com/wanliuno/wiki/wiki/Ethash#mining
 			if ret.success && result.Cmp(target) <= 0 {
 				mixDigest = C.GoBytes(unsafe.Pointer(&ret.mix_hash), C.int(32))
 				atomic.AddInt32(&pow.hashRate, -previousHashrate)

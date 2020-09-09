@@ -1,18 +1,18 @@
-// Copyright 2014 The go-ethereum Authors
-// This file is part of the go-ethereum library.
+// Copyright 2014 The go-wanliuno Authors
+// This file is part of the go-wanliuno library.
 //
-// The go-ethereum library is free software: you can redistribute it and/or modify
+// The go-wanliuno library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// The go-ethereum library is distributed in the hope that it will be useful,
+// The go-wanliuno library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
-// along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
+// along with the go-wanliuno library. If not, see <http://www.gnu.org/licenses/>.
 
 package crypto
 
@@ -27,9 +27,9 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/wanliuno/go-wanliuno/common"
+	"github.com/wanliuno/go-wanliuno/crypto/sha3"
+	"github.com/wanliuno/go-wanliuno/rlp"
 )
 
 var (
@@ -69,7 +69,7 @@ func Keccak512(data ...[]byte) []byte {
 // Deprecated: For backward compatibility as other packages depend on these
 func Sha3Hash(data ...[]byte) common.Hash { return Keccak256Hash(data...) }
 
-// Creates an ethereum address given the bytes and the nonce
+// Creates an wanliuno address given the bytes and the nonce
 func CreateAddress(b common.Address, nonce uint64) common.Address {
 	data, _ := rlp.EncodeToBytes([]interface{}{b, nonce})
 	return common.BytesToAddress(Keccak256(data)[12:])
